@@ -42,7 +42,7 @@ export const services = [
 ];
 
 export const teamImages = {
-  left: "/images/personal-trainer/personal_2.jpg",
+  left: "/images/personal-trainer/trainer-main.jpg",
   right: "/images/personal-trainer/personal_1.jpg",
 };
 

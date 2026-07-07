@@ -43,18 +43,15 @@ export default function Home() {
   const differentialIcons = [BarbellIcon, HeartbeatIcon, LightningIcon];
 
   return (
-    <div className="overflow-x-hidden bg-background text-foreground">
-      <LandingHeader.Root
-        size="lg"
-        className="z-50 border-b border-primary-500/30 bg-[#111317] py-2"
-      >
+    <div className="overflow-x-hidden bg-black text-white">
+      <LandingHeader.Root size="lg" className="z-50 bg-black py-2">
         <LandingHeader.Left className="gap-3">
           <Image
             src="/gym_logo.png"
             alt="Gym Logo"
             width={48}
             height={48}
-            className="w-12 h-12 sm:w-16 sm:h-16"
+            className="h-12 w-12 sm:h-16 sm:w-16"
           />
         </LandingHeader.Left>
 
@@ -69,26 +66,26 @@ export default function Home() {
         </LandingHeader.Center>
 
         <LandingHeader.Right className="gap-3">
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="hidden items-center gap-4 lg:flex">
             <a
               href="https://instagram.com/bodyandhealth"
               aria-label="Instagram"
             >
               <InstagramLogoIcon
-                size={24}
-                className="text-primary-400 transition hover:text-primary-300"
+                size={22}
+                className="text-white transition hover:text-primary-500"
               />
             </a>
             <a href="https://x.com" aria-label="X">
               <XLogoIcon
-                size={24}
-                className="text-primary-400 transition hover:text-primary-300"
+                size={22}
+                className="text-white transition hover:text-primary-500"
               />
             </a>
             <a href="https://youtube.com" aria-label="YouTube">
               <YoutubeLogoIcon
-                size={24}
-                className="text-primary-400 transition hover:text-primary-300"
+                size={22}
+                className="text-white transition hover:text-primary-500"
               />
             </a>
           </div>
@@ -96,7 +93,7 @@ export default function Home() {
           <LandingHeader.MobileMenuToggle
             open={mobileMenuOpen}
             onToggle={setMobileMenuOpen as never}
-            className="text-primary-400"
+            className="text-white"
           />
           <LandingHeader.MobileMenuPanel open={mobileMenuOpen}>
             {navigationItems.map((item) => (
@@ -109,12 +106,15 @@ export default function Home() {
       </LandingHeader.Root>
 
       <main className="flex flex-col">
+        {/* ============================= HERO ============================= */}
         <HeroSection
           size="full"
           backgroundImageLocalPath={heroImageUrl}
-          sectionClassName="relative min-h-[calc(100vh-5.5rem)] !items-stretch overflow-hidden px-4 py-0 sm:px-8"
+          sectionClassName="relative min-h-[calc(100vh-5.5rem)] !items-stretch overflow-hidden bg-black px-4 py-0 sm:px-8"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/55" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/50" />
+          <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black to-transparent" />
           <div className="absolute inset-y-0 right-0 hidden w-full md:block">
             <div
               className="relative h-full w-full"
@@ -135,51 +135,63 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="absolute inset-y-0 right-0 hidden w-2/3 bg-gradient-to-l from-primary-500/18 via-primary-500/6 to-transparent md:block" />
 
           <div
             id="inicio"
             className="relative z-10 mx-auto flex w-full max-w-7xl items-center py-16 lg:py-20"
           >
-            <RevealContainer once className="max-w-2xl space-y-5">
+            <RevealContainer once className="max-w-3xl space-y-6">
               <Subtitle
-                content="PERSONAL TRAINER EM JOAO MONLEVADE -MG"
-                className="!text-sm !font-semibold !tracking-[0.16em] !text-primary-400"
+                content="PERSONAL TRAINER EM JOÃO MONLEVADE — MG"
+                className="!text-xs !font-semibold !uppercase !tracking-[0.3em] !text-primary-500 sm:!text-sm"
               />
               <Title
-                content="Transforme sua vida com treino personalizado e acompanhamento profissional."
-                className="!text-3xl !font-extrabold !leading-tight !text-white sm:!text-4xl lg:!text-5xl"
+                content="TREINO PERSONALIZADO. RESULTADO REAL."
+                className="!text-4xl !font-bold !uppercase !leading-[0.92] !tracking-tight !text-white sm:!text-6xl lg:!text-7xl"
               />
               <Paragraph
-                content="Alcance seus objetivos com treino personalizado, estratégia inteligente e acompanhamento próximo em cada etapa."
-                className="max-w-xl !text-base !text-white/85 sm:!text-lg"
+                content="Alcance seus objetivos com estratégia inteligente e acompanhamento próximo em cada etapa da sua evolução."
+                className="max-w-xl !text-base !leading-relaxed !text-white/70 sm:!text-lg"
               />
-              <Button
-                label="QUERO MEU TREINO PERSONALIZADO"
-                variant="filled"
-                className="!mt-2 !rounded-full !bg-primary-500 !px-8 !py-4 !text-sm !font-bold !tracking-wide !text-[#101114] hover:!bg-primary-400 sm:!text-base"
-              />
+              <div className="flex flex-col gap-4 pt-2 sm:flex-row">
+                <a href="#contato">
+                  <Button
+                    label="Quero meu treino"
+                    variant="filled"
+                    className="!w-full !justify-center sm:!w-auto"
+                  />
+                </a>
+                <a href="#servicos">
+                  <Button
+                    label="Conheça os serviços"
+                    variant="outlined"
+                    className="!w-full !justify-center sm:!w-auto"
+                  />
+                </a>
+              </div>
             </RevealContainer>
           </div>
         </HeroSection>
 
-        <Section
-          size="full"
-          sectionClassName="bg-[#121418] px-4 py-16 sm:px-8 sm:py-20"
-        >
+        {/* ============================ SERVICES ============================ */}
+        <Section size="full" sectionClassName="bg-black px-4 py-20 sm:px-8 sm:py-24">
           <div id="servicos" className="w-full max-w-7xl">
-            <FadeContainer once className="text-center">
+            <FadeContainer once className="max-w-3xl">
+              <Subtitle
+                content="NOSSOS SERVIÇOS"
+                className="!text-xs !font-semibold !uppercase !tracking-[0.3em] !text-primary-500 sm:!text-sm"
+              />
               <Title
                 content="ESCOLHA A MELHOR OPÇÃO PARA O SEU OBJETIVO"
-                className="!text-3xl !font-extrabold !tracking-wide !text-primary-400 sm:!text-4xl"
+                className="!mt-3 !text-3xl !font-bold !uppercase !leading-[1.05] !text-white sm:!text-5xl"
               />
               <Paragraph
                 content="A Body and Health oferece soluções personalizadas para você evoluir com segurança, consistência e resultado."
-                className="mx-auto mt-4 max-w-3xl !text-base !text-foreground/80 sm:!text-lg"
+                className="mt-4 max-w-2xl !text-base !text-white/60 sm:!text-lg"
               />
             </FadeContainer>
 
-            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-12 grid gap-px bg-[#202020] md:grid-cols-2 xl:grid-cols-4">
               {services.map((service, index) => (
                 <ZoomContainer
                   key={service.title}
@@ -187,25 +199,28 @@ export default function Home() {
                   delay={index + 1}
                   className="h-full"
                 >
-                  <article className="h-full overflow-hidden rounded-2xl border border-primary-500/25 bg-[#1b1f26]">
-                    <div className="relative h-60">
+                  <article className="group relative h-full overflow-hidden bg-black">
+                    <div className="relative h-72">
                       <Image
                         src={service.imageUrl}
                         alt={service.title}
                         fill
-                        className="object-cover grayscale"
+                        className="object-cover grayscale transition duration-500 group-hover:grayscale-0"
                         sizes="(max-width: 1280px) 50vw, 25vw"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-primary-500/25" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                      <span className="absolute left-4 top-4 bg-[#969696] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-black">
+                        0{index + 1}
+                      </span>
                       <Subtitle
                         content={service.title.toUpperCase()}
-                        className="absolute bottom-4 left-4 !text-2xl !font-bold !tracking-wide !text-primary-300"
+                        className="absolute bottom-4 left-4 right-4 !text-xl !font-bold !uppercase !tracking-wide !text-white"
                       />
                     </div>
-                    <div className="p-5">
+                    <div className="border-t border-primary-500/60 p-6">
                       <Paragraph
                         content={service.description}
-                        className="!text-sm !text-foreground/85"
+                        className="!text-sm !text-white/60"
                       />
                     </div>
                   </article>
@@ -215,55 +230,60 @@ export default function Home() {
           </div>
         </Section>
 
+        {/* ============================= ABOUT ============================= */}
         <Section
           size="full"
-          sectionClassName="bg-[#ececec] px-4 py-16 sm:px-8 sm:py-20"
+          sectionClassName="bg-[#0a0a0a] px-4 py-20 sm:px-8 sm:py-24"
         >
           <div id="sobre" className="w-full max-w-7xl">
-            <RevealContainer once className="text-center">
+            <RevealContainer once className="max-w-3xl">
+              <Subtitle
+                content="QUEM SOMOS"
+                className="!text-xs !font-semibold !uppercase !tracking-[0.3em] !text-primary-500 sm:!text-sm"
+              />
               <Title
-                content="Conheça a Body and Health Personal Trainer"
-                className="!text-3xl !font-extrabold !text-[#1b1d22] sm:!text-5xl"
+                content="CONHEÇA A BODY AND HEALTH"
+                className="!mt-3 !text-3xl !font-bold !uppercase !leading-[1.05] !text-white sm:!text-5xl"
               />
               <Paragraph
                 content="Treinamento, saúde e performance integrados por uma equipe preparada para atender sua rotina com excelência."
-                className="mx-auto mt-4 max-w-3xl !text-base !text-[#3d3f46] sm:!text-lg"
+                className="mt-4 max-w-2xl !text-base !text-white/60 sm:!text-lg"
               />
             </RevealContainer>
 
-            <div className="mt-10 grid items-start gap-6 lg:grid-cols-[280px_minmax(0,1fr)_280px]">
-              <ZoomContainer once>
-                <div className="relative h-[360px] overflow-hidden rounded-[2rem] border-2 border-primary-500/70">
+            <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-[300px_minmax(0,1fr)_300px]">
+              <ZoomContainer once className="h-full">
+                <div className="relative h-full min-h-[380px] overflow-hidden border border-primary-500/60">
                   <Image
                     src={teamImages.left}
                     alt="MSc. Jorge Lúcio"
                     fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 280px"
+                    className="object-cover grayscale"
+                    sizes="(max-width: 1024px) 100vw, 300px"
                   />
                 </div>
               </ZoomContainer>
 
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {differentials.map((item, index) => {
                   const Icon =
                     differentialIcons[index % differentialIcons.length];
 
                   return (
                     <FadeContainer key={item.title} once delay={index + 1}>
-                      <article className="rounded-2xl border border-[#dadada] bg-white p-5 shadow-sm">
-                        <div className="flex items-start gap-3">
-                          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary-500/20 text-[#272100]">
+                      <article className="border border-[#202020] bg-[#141414] p-6 transition-colors hover:border-primary-500/50">
+                        <div className="flex items-start gap-4">
+                          <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-primary-500 text-black">
                             <Icon size={24} weight="fill" />
                           </div>
                           <div className="space-y-2">
                             <Subtitle
                               content={item.title}
-                              className="!text-xl !font-bold !text-[#181b22]"
+                              className="!text-lg !font-bold !text-white"
                             />
                             <Paragraph
                               content={item.description}
-                              className="!text-[#4c4f57]"
+                              className="!text-white/60"
                             />
                           </div>
                         </div>
@@ -273,14 +293,14 @@ export default function Home() {
                 })}
               </div>
 
-              <ZoomContainer once>
-                <div className="relative h-[360px] overflow-hidden rounded-[2rem] border-2 border-primary-500/70">
+              <ZoomContainer once className="h-full">
+                <div className="relative h-full min-h-[380px] overflow-hidden border border-primary-500/60">
                   <Image
                     src={teamImages.right}
                     alt="Dr. Hugo Falqueto"
                     fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 280px"
+                    className="object-cover grayscale"
+                    sizes="(max-width: 1024px) 100vw, 300px"
                   />
                 </div>
               </ZoomContainer>
@@ -288,148 +308,140 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section
-          size="full"
-          sectionClassName="bg-[#e2e2e2] px-4 py-16 sm:px-8 sm:py-20"
-        >
+        {/* ============================== BLOG ============================== */}
+        <Section size="full" sectionClassName="bg-black px-4 py-20 sm:px-8 sm:py-24">
           <div id="blog" className="w-full max-w-5xl">
             <RevealContainer once>
-              <div className="rounded-[2rem] bg-[#f7f7f7] px-6 py-14 text-center shadow-[0_20px_60px_rgba(0,0,0,0.1)]">
+              <div className="border border-[#202020] bg-[#181818] px-6 py-16 text-center sm:px-12">
+                <Subtitle
+                  content="CONTEÚDO"
+                  className="!text-xs !font-semibold !uppercase !tracking-[0.3em] !text-primary-500 sm:!text-sm"
+                />
                 <Title
                   content={blogSection.title}
-                  className="!text-4xl !font-black !tracking-wide !text-[#3a3d44] sm:!text-6xl"
+                  className="!mt-3 !text-4xl !font-bold !uppercase !tracking-tight !text-white sm:!text-6xl"
                 />
                 <Paragraph
                   content={blogSection.description}
-                  className="mx-auto mt-4 max-w-3xl !text-base !text-[#45484f] sm:!text-lg"
+                  className="mx-auto mt-4 max-w-2xl !text-base !text-white/60 sm:!text-lg"
                 />
-                <div className="mt-8 flex justify-center">
-                  <Button
-                    label={blogSection.buttonLabel}
-                    variant="filled"
-                    className="!rounded-full !bg-gradient-to-r !from-primary-300 !to-primary-500 !px-12 !py-4 !text-base !font-black !tracking-[0.08em] !text-[#121317] shadow-[0_10px_26px_rgba(0,0,0,0.25)] sm:!text-lg"
-                  />
+                <div className="mt-10 flex justify-center">
+                  <Button label={blogSection.buttonLabel} variant="filled" />
                 </div>
               </div>
             </RevealContainer>
           </div>
         </Section>
 
-        <Section
-          size="full"
-          sectionClassName="bg-[radial-gradient(circle_at_80%_20%,rgba(244,196,0,0.18),rgba(16,17,21,1)_45%)] px-4 py-16 sm:px-8 sm:py-20"
-        >
+        {/* ============================= CONTACT ============================= */}
+        <Section size="full" sectionClassName="bg-[#0a0a0a] px-4 py-20 sm:px-8 sm:py-24">
           <div id="contato" className="w-full max-w-7xl">
             <RevealContainer once className="max-w-3xl">
+              <Subtitle
+                content="ATENDIMENTO"
+                className="!text-xs !font-semibold !uppercase !tracking-[0.3em] !text-primary-500 sm:!text-sm"
+              />
               <Title
-                content="Fale Conosco"
-                className="!text-4xl !font-extrabold !text-primary-400 sm:!text-5xl"
+                content="FALE CONOSCO"
+                className="!mt-3 !text-4xl !font-bold !uppercase !leading-[1.05] !text-white sm:!text-6xl"
               />
               <Paragraph
                 content="Tire suas dúvidas e solicite seu plano personalizado pelos nossos canais de atendimento."
-                className="mt-4 !text-base !text-foreground/85 sm:!text-lg"
+                className="mt-4 !text-base !text-white/60 sm:!text-lg"
               />
             </RevealContainer>
 
-            <div className="mt-8 grid gap-6 md:grid-cols-2">
-              <FadeContainer
-                once
-                className="rounded-2xl border border-primary-500/20 bg-[#13161c] p-6"
-              >
-                <div className="space-y-4">
+            <div className="mt-10 grid gap-px bg-[#202020] md:grid-cols-2">
+              <FadeContainer once className="bg-black p-8">
+                <div className="space-y-5">
                   <a
                     href="https://wa.me/5531912341234"
-                    className="flex items-center gap-3"
+                    className="group flex items-center gap-3"
                   >
-                    <WhatsappLogoIcon size={26} className="text-primary-400" />
+                    <WhatsappLogoIcon size={26} className="text-primary-500" />
                     <Subtitle
                       content={contacts.whatsapp}
-                      className="!text-lg !font-semibold !text-primary-300"
+                      className="!text-lg !font-semibold !text-white transition-colors group-hover:!text-primary-500"
                     />
                   </a>
 
                   <a
                     href="https://instagram.com/bodyandhealth"
-                    className="flex items-center gap-3"
+                    className="group flex items-center gap-3"
                   >
-                    <InstagramLogoIcon size={26} className="text-primary-400" />
+                    <InstagramLogoIcon size={26} className="text-primary-500" />
                     <Subtitle
                       content={contacts.instagram}
-                      className="!text-lg !font-semibold !text-primary-300"
+                      className="!text-lg !font-semibold !text-white transition-colors group-hover:!text-primary-500"
                     />
                   </a>
 
                   <a
                     href="mailto:contato@bodyandhealth.com.br"
-                    className="flex items-center gap-3"
+                    className="group flex items-center gap-3"
                   >
-                    <EnvelopeSimpleIcon
-                      size={26}
-                      className="text-primary-400"
-                    />
+                    <EnvelopeSimpleIcon size={26} className="text-primary-500" />
                     <Subtitle
                       content={contacts.email}
-                      className="!text-lg !font-semibold !text-primary-300"
+                      className="!text-lg !font-semibold !text-white transition-colors group-hover:!text-primary-500"
                     />
                   </a>
 
                   <div className="flex items-center gap-3">
-                    <MapPinIcon size={26} className="text-primary-400" />
+                    <MapPinIcon size={26} className="text-primary-500" />
                     <Subtitle
                       content={contacts.location}
-                      className="!text-lg !font-semibold !text-primary-300"
+                      className="!text-lg !font-semibold !text-white"
                     />
                   </div>
                 </div>
 
-                <Button
-                  label="FALE CONOSCO PELO WHATSAPP"
-                  variant="filled"
-                  className="!mt-8 !w-full !justify-center !rounded-full !bg-primary-500 !px-6 !py-4 !text-sm !font-black !tracking-[0.06em] !text-[#121317] hover:!bg-primary-400 sm:!text-base"
-                />
+                <a href="https://wa.me/5531912341234" className="mt-8 block">
+                  <Button
+                    label="Fale conosco pelo WhatsApp"
+                    variant="filled"
+                    className="!w-full !justify-center"
+                  />
+                </a>
               </FadeContainer>
 
-              <FadeContainer
-                once
-                delay={2}
-                className="rounded-2xl border border-primary-500/20 bg-[#13161c] p-6"
-              >
+              <FadeContainer once delay={2} className="bg-black p-8">
                 <Subtitle
-                  content="Atendimento rápido e humanizado"
-                  className="!text-2xl !font-bold !text-white"
+                  content="ATENDIMENTO RÁPIDO E HUMANIZADO"
+                  className="!text-xl !font-bold !uppercase !tracking-wide !text-white"
                 />
-                <div className="mt-5 space-y-4">
+                <div className="mt-6 space-y-5">
                   <div className="flex items-start gap-3">
                     <CheckCircleIcon
                       size={22}
                       weight="fill"
-                      className="mt-0.5 text-primary-400"
+                      className="mt-0.5 text-primary-500"
                     />
                     <Paragraph
                       content="Retorno no WhatsApp com agilidade para alinhamento do seu objetivo."
-                      className="!text-foreground/85"
+                      className="!text-white/70"
                     />
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircleIcon
                       size={22}
                       weight="fill"
-                      className="mt-0.5 text-primary-400"
+                      className="mt-0.5 text-primary-500"
                     />
                     <Paragraph
                       content="Avaliação inicial personalizada para definir o melhor plano."
-                      className="!text-foreground/85"
+                      className="!text-white/70"
                     />
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircleIcon
                       size={22}
                       weight="fill"
-                      className="mt-0.5 text-primary-400"
+                      className="mt-0.5 text-primary-500"
                     />
                     <Paragraph
                       content="Acompanhamento próximo para garantir evolução e constância."
-                      className="!text-foreground/85"
+                      className="!text-white/70"
                     />
                   </div>
                 </div>
@@ -439,8 +451,9 @@ export default function Home() {
         </Section>
       </main>
 
-      <Footer.Root className="border-t border-primary-500/25 bg-[#0f1115]">
-        <Footer.Top columns={4} bordered className="bg-transparent">
+      {/* ============================= FOOTER ============================= */}
+      <Footer.Root className="border-t border-[#202020] bg-black">
+        <Footer.Top columns={4} bordered className="border-[#202020] bg-transparent">
           <Footer.Column>
             <div className="flex flex-col gap-4">
               <Image
@@ -448,11 +461,11 @@ export default function Home() {
                 alt="Gym Logo"
                 width={48}
                 height={48}
-                className="w-12 h-12 sm:w-16 sm:h-16"
+                className="h-12 w-12 sm:h-16 sm:w-16"
               />
               <Paragraph
                 content="Treinamento e consultoria personalizada para atender sua condição física e sua rotina."
-                className="!text-sm !text-foreground/75"
+                className="!text-sm !text-white/50"
               />
             </div>
           </Footer.Column>
@@ -468,15 +481,15 @@ export default function Home() {
 
         <Footer.SocialRow
           items={footerSocialItems as never}
-          className="bg-[#101317]"
-          iconsClassName="text-primary-400 hover:text-primary-300"
+          className="border-[#202020] bg-[#0a0a0a]"
+          iconsClassName="text-white hover:text-primary-500"
           bordered
         />
 
-        <Footer.Bottom bordered className="bg-[#0c0e12]">
+        <Footer.Bottom bordered className="border-[#202020] bg-black">
           <Paragraph
             content={`© ${new Date().getFullYear()} Body and Health Personal Trainer. Todos os direitos reservados.`}
-            className="!text-sm !text-foreground/70"
+            className="!text-sm !text-white/50"
           />
         </Footer.Bottom>
       </Footer.Root>

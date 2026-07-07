@@ -133,9 +133,9 @@ Nav.Item = ({ href = "#", target, onClick, children, active }) => (
       target={target}
       onClick={onClick}
       className={clsx(
-        "text-sm font-medium  whitespace-nowrap text-left",
-        "text-foreground/90 hover:text-foreground",
-        active && "text-primary"
+        "text-sm font-medium uppercase tracking-[0.12em] whitespace-nowrap text-left transition-colors",
+        "text-foreground/80 hover:text-primary-500",
+        active && "text-primary-500"
       )}
     >
       {children}
@@ -155,9 +155,9 @@ const CTA: React.FC<CTAProps> = ({ className, label, ...rest }) => {
     <button
       {...rest}
       className={clsx(
-        "inline-flex items-center justify-center rounded-lg",
-        "bg-primary-500 font-secondary hover:opacity-90",
-        "px-4 py-2 text-xs sm:text-sm font-semibold text-white",
+        "inline-flex items-center justify-center rounded-none",
+        "bg-primary-500 font-secondary uppercase tracking-[0.1em] hover:bg-primary-700",
+        "px-6 py-3 text-xs sm:text-sm font-semibold text-black",
         className
       )}
     >
@@ -178,8 +178,8 @@ const MobileMenuToggle: React.FC<
     onClick={() => onToggle?.(!open)}
     {...rest}
     className={clsx(
-      "flex md:invisible h-9 w-9 md:w-0 md:h-0 items-center justify-center rounded-lg",
-      "hover:bg-primary/10",
+      "flex md:invisible h-9 w-9 md:w-0 md:h-0 items-center justify-center rounded-none",
+      "hover:bg-primary-500/10",
       className
     )}
   >

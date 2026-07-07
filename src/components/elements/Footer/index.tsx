@@ -111,7 +111,7 @@ const Column: React.FC<ColumnProps> = ({
   return (
     <div {...rest} className={clsx("flex flex-col items-center sm:items-start", className)}>
       {title && (
-        <h4 className="mb-3 text-xs sm:text-sm font-semibold tracking-wide text-foreground">
+        <h4 className="mb-3 text-xs sm:text-sm font-semibold uppercase tracking-[0.14em] text-foreground">
           {title}
         </h4>
       )}
@@ -123,12 +123,12 @@ const Column: React.FC<ColumnProps> = ({
                 <a
                   href={it.href}
                   target={it.target}
-                  className="text-foreground/80 text-xs sm:text-sm hover:text-foreground underline-offset-4 hover:underline"
+                  className="text-foreground/70 text-xs sm:text-sm transition-colors hover:text-primary-500"
                 >
                   {it.label}
                 </a>
               ) : (
-                <span className="text-foreground/70 text-xs sm:text-sm">
+                <span className="text-foreground/60 text-xs sm:text-sm">
                   {it.label}
                 </span>
               )}

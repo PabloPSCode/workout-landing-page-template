@@ -33,13 +33,13 @@ export default function Button({
   return (
     <button
       className={clsx(
-        `flex items-center justify-center w-fit px-3 py-2 sm:px-4 sm:py-3 rounded-md  ${
+        `flex items-center justify-center w-fit px-6 py-4 rounded-none font-secondary font-semibold uppercase tracking-[0.1em] transition-colors ${
           variant === "filled"
-            ? "bg-primary-500 text-foreground"
+            ? "bg-primary-500 text-black hover:bg-primary-700"
             : variant === "outlined"
-            ? "border border-primary-500 text-primary-500"
+            ? "border border-white/50 text-white hover:bg-[#1EAEDB] hover:border-black"
             : variant === "alert"
-            ? "bg-amber-500 text-foreground"
+            ? "bg-amber-500 text-black"
             : variant === "destructive"
             ? "bg-destructive-500 text-foreground"
             : ""

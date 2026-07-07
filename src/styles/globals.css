@@ -3,15 +3,16 @@
 @import "../styles/phone-overrides.css";
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {--color-primary: #f4c400;}
-@theme {--color-primary-50:  #fffceb;}
-@theme {--color-primary-100: #fff6c7;}
-@theme {--color-primary-200: #ffec8f;}
-@theme {--color-primary-300: #ffe15a;}
-@theme {--color-primary-400: #ffd632;}
-@theme {--color-primary-500: #f4c400;}
-@theme {--color-primary-600: #c99f00;}
-@theme {--color-primary-700: #9d7c00;}
+/* Lamborghini Gold ramp — #FFC000 is the sole accent color */
+@theme {--color-primary: #FFC000;}
+@theme {--color-primary-50:  #fff9e6;}
+@theme {--color-primary-100: #fff0bf;}
+@theme {--color-primary-200: #ffe38a;}
+@theme {--color-primary-300: #ffd86b;}
+@theme {--color-primary-400: #ffce3e;}
+@theme {--color-primary-500: #ffc000;}
+@theme {--color-primary-600: #cc9a00;}
+@theme {--color-primary-700: #917300;}
 @theme {--color-primary-800: #6f5800;}
 @theme {--color-primary-900: #433500;}
 @theme {--color-primary-950: #221a00;}
@@ -90,17 +91,26 @@
 @theme {--color-destructive-950: #2b0009;}
 
 @theme {
-  --color-background: #0f1115;
-  --color-foreground: #f5f6f8;
-  --color-bg-card: #171b22;
-  --color-border-card: #2a3038;
+  /* Lamborghini surface layering: Abyss #000 → Dark Iron #181818 → Charcoal #202020 */
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --color-bg-card: #202020;
+  --color-border-card: #202020;
 
-    --font-primary: "Montserrat", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+  /* Named Lamborghini surfaces / neutrals for direct use */
+  --color-abyss: #000000;
+  --color-iron: #181818;
+  --color-charcoal: #202020;
+  --color-ash: #7d7d7d;
+  --color-steel: #969696;
+
+  /* Display & UI — Archivo neo-grotesk approximating LamboType */
+  --font-primary: var(--font-archivo), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
                Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
                "Segoe UI Emoji", sans-serif;
 
-  /* Secondary font (e.g., for headings) */
-  --font-secondary: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+  /* Single-typeface discipline — headings share the display face */
+  --font-secondary: var(--font-archivo), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
                     Roboto, "Helvetica Neue", Arial, "Noto Sans",
                     "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
 
@@ -108,10 +118,10 @@
 
 /* Class override so a `.dark` class wins regardless of system */
 :root.dark {
-  --color-background: #0b0d10;
-  --color-foreground: #f5f6f8;
-  --color-bg-card: #12161c;
-  --color-border-card: #262c34;
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --color-bg-card: #181818;
+  --color-border-card: #202020;
 }
 
 
@@ -121,7 +131,7 @@
 
 html{
   scroll-behavior: smooth;
-  font-family: 'Montserrat', ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+  font-family: var(--font-archivo), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
                Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
                "Segoe UI Emoji", sans-serif;
 }
